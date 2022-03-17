@@ -44,7 +44,7 @@ class AttendanceController extends Controller
 
         //don't let to navigate to future attendances
         if ($this->attendanceService->isProvidedMonthGreaterThanCurrentMonth($selectedYear, $selectedMonth)) {
-            return redirect()->route('admin.attendances.redirect');
+            return redirect('admin');
         }
 
         $daysInMonth     = $this->attendanceService->daysInMonth($selectedYear, $selectedMonth);
